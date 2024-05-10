@@ -1,0 +1,17 @@
+
+#note-link:hover > * {
+  background: "#456";
+  color: "#111";
+}
+
+#note-link:hover > .heading {
+  background: "#456";
+  color: "#111";
+}
+
+#note-link:hover {
+  * {
+    background: "#456";
+    color: "#111";
+  }
+}
