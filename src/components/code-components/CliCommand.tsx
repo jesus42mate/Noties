@@ -1,21 +1,39 @@
 import { Box, Text } from "@chakra-ui/react"
-import { ReactNode } from "react"
 
-export const CliCommand: React.FC<{
+interface CliCommandProps {
   children: string,
-}> = (props) => {
-  const { children } = props;
+  description?: string,
+}
+
+export const CliCommand: React.FC<CliCommandProps> = ({
+  children,
+  description,
+}) => {
   return (
-    <Box 
-      my="0.8rem"
-      fontSize="15px"
-      bg="black.simple"
-      fontFamily="monospace"
-      borderRadius="4px">
-      <Text 
-        p="0.7rem"
-        px="1.5rem"
-      >$ {children}</Text>
-    </Box>
+    <>
+      <Box 
+        m={description ? "1rem 0 0 0" : "0.6rem 0 0.6rem 0" }
+        fontSize="15px"
+        bg="black.simple"
+        fontFamily="monospace"
+        borderRadius={description ? "4px 4px 0 0" : "4px"}
+      >
+        <Text 
+          flexWrap="wrap"
+          p="0.7rem"
+          px="1.5rem"
+        >$ {children}</Text>
+      </Box>
+      {description ? (
+        <Box 
+          width="100%"
+          padding="0.2rem 1.5rem"
+          mb="0.6rem" 
+          bg="#3b3b9b" 
+          borderRadius="0 0 4px 4px"
+          color="white.300"
+        >{description}</Box>
+      ) : undefined}
+    </>
   )
 }

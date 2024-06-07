@@ -7,40 +7,45 @@ import { useState } from "react";
 interface NoteLinkProps {
   link: string,
   title: string,
-  description: string,
 }
 
 interface NoteLinkOptionalProps {
   image?: string
+  description?: string,
+  centered?: boolean
 }
 
 export const NoteLink: React.FC<NoteLinkProps & NoteLinkOptionalProps> = ({
   title,
-  description,
   image,
   link,
+  centered,
+  description,
 }) => {
   const [isHovered, setIsHovered] = useState(false)
   return (
     <Box 
-      bg={isHovered ? "#dcdcdc" : "#222"}
+      bg={isHovered ? "white.300" : "#222"}
       my="15px"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      color={isHovered ? "#ddd" : "#222"}
+      color={isHovered ? "white.300" : "#222"}
       width="500px"
       padding="10px"
       id="note-link"
       borderRadius="4px"
-      border={isHovered ? "1px solid #222" : "1px solid #ddd"}
+      borderColor={isHovered ? "#222" : "gray.soft"}
     >
       <Link href={link}>
         <Heading
           className="heading"
+          textAlign={centered ? "center" : undefined}
           id="link"
           color={isHovered ? "#222" : "#ddd"}
         >{title}</Heading>
-        <Text color={isHovered ? "#222" : "#ddd"}>{description}</Text>
+        {description && (
+          <Text color={isHovered ? "#222" : "#ddd"}>{description}</Text>
+        )}
         {image && (
           <Image src={image} />
         )}

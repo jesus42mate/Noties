@@ -16,6 +16,16 @@ export default function Laravel() {
         description="gRPC is a high performance, open-source universal RPC framework."
         link="/frameworks/grpc"
       />
+      <NoteLink 
+        title="Expo"
+        description="A framework for building full-stack native and web applications."
+        link="/frameworks/expo"
+      />
+      <NoteLink 
+        title="React Native"
+        description="cross-platform mobile apps."
+        link="/frameworks/react-native"
+      />
     </VStack>
   )
 }

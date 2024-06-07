@@ -24,7 +24,11 @@ export const components: ThemeComponents = {
         borderRadius: "15px",
       }
     },
-
+  },
+  Link: {
+    baseStyle: {
+      color: "#77f",
+    }
   }
 }
 

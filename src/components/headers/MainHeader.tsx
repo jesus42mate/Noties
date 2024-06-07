@@ -12,15 +12,13 @@ interface MainHeaderOptionalProps {
 export const MainHeader: React.FC<MainHeaderProps & MainHeaderOptionalProps> = ({
   title,
   sub_title,
-  image,
 }) => {
   return (
     <VStack
-      border="1px solid"
-      borderColor="gray.soft"
       borderRadius="4px"
+      wrap="nowrap"
       padding="10px"
-      width="500px"
+      minW="500px"
       my="15px"
       bg="#222"
       color="#ddd"

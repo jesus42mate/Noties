@@ -18,6 +18,7 @@ export default function Ubuntu() {
         <CliCommand>{"sudo cat /var/log/auth.log | grep <your_username>"}</CliCommand>
 
       </Segment>
+
       <Segment title="Authorized Keys?">
         <Text>
           It's very common to have a file called <b>authorized_keys</b> inside<b> /home/{"<username>"}/.ssh/ </b>
@@ -81,6 +82,29 @@ export default function Ubuntu() {
         <CliCommand>{"ssh -i <public_key> root@<server_ip>"}</CliCommand>
         <Text>Will not work.</Text>
       </Segment>
+
+      <Segment title="Looking at opened ports">
+        <Text>
+          This can be done either from the server or from our local machine using nmap, it 
+          shows us the ports that are open on the IP passed.
+        </Text>
+        <CliCommand>{'nmap <ip_to_be_tested>'}</CliCommand>
+        <Divider my="1rem" />
+        <Text>
+          You can also lock yourself out of your server if you wish to. You can archieve that by
+          doing
+        </Text>
+        <CliCommand>sudo ufw reject ssh??? DONT DO THISSS OIDAJSDIA</CliCommand>
+      </Segment>
+
+      <Segment title="Auto Updates to keep the server secure">
+        <Text>It's important to have the latest (stable) updates. That's why we do...</Text>
+        <CliCommand>sudo apt install unattended-upgrades</CliCommand>
+        <CliCommand>sudo dpkg-reconfigure --priority=low unattended-upgrades</CliCommand>
+      </Segment>
+
+      
+
     </VStack>
   )
 }

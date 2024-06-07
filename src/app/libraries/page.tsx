@@ -15,6 +15,11 @@ export default function Libraries() {
         description="A library for managing and centralizing state application"
         link="/libraries/redux"
       />
+      <NoteLink 
+        title="Sqlite"
+        description="A fast & simple database library."
+        link="/libraries/sqlite"
+      />
     </VStack>
   )
 }

@@ -9,13 +9,8 @@ export default function Go() {
         title="Go"
         sub_title="A language to develop backends(sometimes)"
       />
-      <Segment 
-        title="Basics"
-      >
-        <Text
-          color="#ddd"
-          padding="4px"
-        >The following are the basics.</Text>
+      <Segment title="Creating a module">
+        <Text>Creating a module for your go project is pretty simple</Text>
       </Segment>
     </VStack>
   )

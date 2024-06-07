@@ -6,6 +6,7 @@ interface SegmentProps {
 }
 
 interface SegmentPropsOptional extends BoxProps {
+  id?: string,
   title?: string,
   color?: string,
   width?: string,
@@ -15,6 +16,7 @@ interface SegmentPropsOptional extends BoxProps {
 }
 
 export const Segment: React.FC<SegmentProps & SegmentPropsOptional> = ({
+  id,
   width = "50rem",
   title,
   color,
@@ -25,10 +27,10 @@ export const Segment: React.FC<SegmentProps & SegmentPropsOptional> = ({
 }) => {
   return (
     <Box
+      as="section"
+      id={id}
       bg="#222"
       borderRadius="4px"
-      border={color ? `1px solid ${color} `:  "1px solid"}
-      borderColor="gray.soft"
       padding="30px"
       margin={margin ? margin : "1rem"}
       width={width}

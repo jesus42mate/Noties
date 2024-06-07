@@ -94,10 +94,10 @@ export default function React() {
         the least amount of elements in the same level as the inputs.</Text>
         <Text>Take the following code: </Text>
         <CodeSnippet>
-          {`const [input, setInput] = useState(() => getDefaultInput())\n`}
-          {`return (\n`}
-          {`  <InputField setInput={setInput}>\n`}
-          {`)\n`}
+          {`const [input, setInput] = useState(() => getDefaultInput())`}
+          {`return (`}
+          {`  <InputField setInput={setInput}>`}
+          {`)`}
         </CodeSnippet>
         <Text>Imagine we had 13 other components being rendered in that same component next to the
          {` <InputField> `}component, what would we do then? Just let everything be re-rendered EVERY TIME 
@@ -111,15 +111,15 @@ export default function React() {
         of them that takes 5 times more to render, thus making everything else around it
         slower.</Text>
         <CodeSnippet>
-          {`export function App() {\n`}
-          {`  const [name, setName] = useState("")\n`}
-          {`  return (\n`}
-          {`    <Component />\n`}
-          {`    <Input updateName={() => setName()} />\n`}
-          {`    <Expensive Component />\n`}
-          {`    <Component />\n`}
-          {`  )\n`}
-          {`}\n`}
+          {`export function App() {`}
+          {`  const [name, setName] = useState("")`}
+          {`  return (`}
+          {`    <Component />`}
+          {`    <Input updateName={() => setName()} />`}
+          {`    <Expensive Component />`}
+          {`    <Component />`}
+          {`  )`}
+          {`}`}
         </CodeSnippet>
         <CodeBlock>
           <Const indent={0} name="name" value="rob" />

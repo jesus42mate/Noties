@@ -17,6 +17,11 @@ export default function Security() {
         description="Web Servers on Ubuntu 24.04"
         link="/security/web_servers"
       />
+      <NoteLink 
+        title="EC2 Instance"
+        description="AWS does things a little different"
+        link="/security/ec2"
+      />
     </VStack>
   )
 }

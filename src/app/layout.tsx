@@ -4,6 +4,8 @@ import "./globals.css";
 import Providers from "./providers";
 import { NavigationBar } from "@/components/nav-bar/NavigationBar";
 import { fonts } from "./fonts";
+import GenericFooter from "@/components/footers/GenericFooter";
+import { Box } from "@chakra-ui/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +21,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={fonts.roboto_condensed.variable}>
-        <body className={inter.className}>
+      <body className={inter.className}>
         <Providers>
           <NavigationBar />
-          {children}
+          <Box minH="100vh">
+            {children}
+          </Box>
+          <GenericFooter />
         </Providers>
-        </body>
+      </body>
     </html>
   );
 }
